@@ -24,7 +24,7 @@ public class Mapper {
 		String[] parts = json.replace("{", "").replace("}", "").split(", ");
 
 		int id = Integer.parseInt(parts[0].split(": ")[1]);
-		String description = parts[1].split(": ")[1];
+		String description = parts[1].split(": ")[1].replace("\"", "");
 		String statusStr = parts[2].split(": ")[1].replace("\"", "");
 		Status status = Status.valueOf(statusStr);
 		String createdAt = parts[3].split(": ")[1].replace("\"", "");

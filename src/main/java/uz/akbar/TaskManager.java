@@ -64,7 +64,13 @@ public class TaskManager {
 
 	/* Add a new task */
 	public void addTask(String description) {
-		int id = tasks.size() + 1;
+		int id = 0;
+
+		if (tasks.size() > 0) {
+			id = tasks.get(tasks.size() - 1).getId() + 1;
+		} else {
+			id = 1;
+		}
 
 		Task task = new Task(id, description, Status.TODO, LocalDateTime.now(), LocalDateTime.now());
 		tasks.add(task);
@@ -135,7 +141,8 @@ public class TaskManager {
 			task.setStatus(status);
 			task.setUpdatedAt(LocalDateTime.now());
 			saveTasks();
-			System.out.println("Task status updated to " + status + " 🗽 (ID: " + id + ")");
+			System.out.println("Task status updated to " + status.toString().toLowerCase().replace("_", "-")
+					+ " 🗽 (ID: " + id + ")");
 		} else {
 			System.out.println("Task not found 🤷 (ID: " + id + ")");
 		}

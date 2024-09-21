@@ -60,7 +60,7 @@ public class Main {
 
 				case "list":
 					if (args.length >= 2) {
-						String input = args[1].toUpperCase();
+						String input = args[1].toUpperCase().replace('-', '_');
 
 						try {
 							Status status = Status.valueOf(input);
