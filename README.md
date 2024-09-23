@@ -29,16 +29,16 @@ task-cli list in-progress
 ```
 ## Usage
 First, clone the repository and navigate to the project directory:
-```sh
+```bash
 git clone https://github.com/MuhammadAkbar007/task-tracker-cli.git
 cd task-tracker-cli
 ```
 Compile and package the project
-```sh
+```bash
 mvn clean package
 ```
 Run the Task Tracker
-```sh
+```bash
 java -jar target/task-tracker-cli.jar [COMMAND]
 ```
 ## Project structure
